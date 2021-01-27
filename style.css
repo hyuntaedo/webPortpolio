@@ -4,6 +4,7 @@
     --color-pink : pink;
     --color-white : white;
     --color-dark-pink : #FF1493;
+    --color-light-white :#F0FFF0;
     
     /* Font size */
     --font-large : 24px;
@@ -28,6 +29,13 @@ body {
 a {
     text-decoration: none;
     color: var(--color-white);
+}
+
+button {
+    background :transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
 }
 
 ul {
@@ -97,4 +105,29 @@ p {
 }
 .navbar__menu__item:hover {
     background-color: var(--color-dark-pink);
+}
+
+/* Home */
+#home {
+    background: url(./Portpolio_webSite/imgs/portpolio_background.png) center/cover no-repeat;
+    padding: 40px;
+    text-align: center;
+}
+.home__avatar {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid var(--color-light-white);
+}
+.home__title, .home__description {
+    color: var(--color-white);
+}
+.home__button {
+    font-size: var(--font-regular);
+    font-weight: var(--weight-bold);
+    margin: 24px;
+    padding: 8px 12px;
+    border: 2px solid var(--color-white);
+    border-radius: var(--size-border-radius);
+    color: var(--color-white);
 }
