@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box-sizing</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .inner {
+            width: 100%;
+            height: 100%; /* 부모의 100% 너비를 차지함 */
+            background-color: blue;
+        }
+        .box2 {
+            padding: 20px; /* 전체적인 박스의 사이즈가 커짐*/
+            box-sizing: content-box;/* default 값 */
+            box-sizing: border-box;/* border안에 잡힘*/
+            border: 3px solid green; /* border-box를 사용할 시 content안에 border를 포함하게 만들어 져서 컨텐츠의 100*100 사이즈는 변하지 않음*/
+        }
+    </style>
+</head>
+<body>
+    <h3>Box without padding</h3>
+    <div class="box box1">
+        <div class="inner"></div>
+    </div>
+    <h3>Box with Padding</h3>
+    <div class="box box2">
+        <div class="inner"></div>
+    </div>
+    <h3>Box with padding, border-box</h3>
+    <div class="box box3">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>

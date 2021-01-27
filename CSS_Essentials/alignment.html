@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 100px;
+            background-color: beige;
+        }
+        .inner{
+            width: 50%;
+            height: 50%;
+            background: blue;
+        }
+        .inner1 {
+            margin: auto;/* box도 block level이라 margin이 자동으로 들어가 있음 보통 오른쪽으로 들어 있음*/
+            /* 수평적으로만 중간 정렬이 됨*/
+        }
+        .box2 {
+            text-align: center;
+            /* 다른 요소들을 정렬 할 때도 굉장히 많이 씀 */
+            /* div는 제대로 작동하지 않는다. inner2에 margin:auto를 줘야 한다. text(inline)라면 정렬이 된다.*/
+            /* 이 또한 수직으로는 정렬이 안됨 그렇다면 */
+        }
+        .inner3 {
+            transform: translate(50%,50%);
+        }
+        .box4 h1{
+            text-align: center;
+            line-height: 100px;/* 한줄의 텍스트를 정렬하는데 사용한다.*/
+        }
+    </style>
+</head>
+<body>
+    <h3>margin: auto</h3>
+    <div class="box box1">
+        <div class="inner inner1"></div>
+    </div>
+    
+    <h3>text-align : center</h3>
+    <div class="box box2">
+        <button>Text</button>
+    </div>
+    
+    <h3>translate{50%, 50%}</h3>
+    <div class="box box3">
+        <div class="inner inner3"></div>
+    </div>
+    
+    <h3>Text centering</h3>
+    <div class="box box4">
+        <h1>Text</h1>
+    </div>
+</body>
+</html>

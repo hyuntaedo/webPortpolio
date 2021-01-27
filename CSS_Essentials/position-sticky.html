@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+            top: 100px;
+            left: 100px;
+            background-color: beige;
+        }
+        .box {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            background-color: chocolate;
+        }
+        .box2 {
+            background-color: pink;
+            position: sticky; 
+            /* 포지션이 static relative sticky면 그 안에 들어있는 박스 안에서 변경이 일어나게 되고
+            포지션이 absolute면 들어있는 근접한 부모 박스들 중에 static이 아닌것중에 변경 fixed는 viewport에서 포지션 변경이 일어남 */
+            
+            /* 그 자리 공간을 유지하기 때문에 다른 요소도 공간을 그대로 차지한다.*/
+            
+            /* sticky를 쓸려면 top과 left같은 자리값을 지정해주어야 하고 sticky는 그 자리에 유지하면서 스크롤링이 될때 유지되지만
+            fixed는 viewport에서 자리가 고정된다.*/
+            top: 0;
+            left: 0;
+        }
+        .box3 {
+            background-color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+        <div class="box box6"></div>
+        <div class="box box7"></div>
+        <div class="box box8"></div>
+        <div class="box box9"></div>
+        <div class="box box10"></div>
+    </div>
+</body>
+</html>

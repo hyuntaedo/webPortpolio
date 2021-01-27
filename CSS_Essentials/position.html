@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+            background-color: green;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+        }
+        .inner {
+            width: 100%;
+            height: 50%;
+        }
+        .inner1 {
+            background-color: blue;
+        }
+        .inner2 {
+            background-color: yellow;
+        }
+        .box1 .inner1 {
+            position: relative;/* 원래 있던 자리를 유지하면서 inner1이 바깥으로 나온것 처럼 보이지만 원래 자리를 유지하면서  inner2가 원래 있던 자리를 유지함*/
+            /* relative는 원래 자리를 유지하면서 그 자리에서 상대적으로 우리가 지정한 top과 left만큼 이동한다.*/
+            top: 30px;
+            left: 100px;
+        }
+        .box2 .inner1 {
+            position: absolute;
+            /*기본값에서 static이 아닌 부모값에서 이동하게 되는 것 */
+            top: 30px;
+            left: 100px;
+        }
+        /* 포지션의 기본값은 static이다. static을 하였을때는 top left같은 속성을 사용해도 상관이없고 relative는 상대적으로 이동, absolute는 근접한 부모중에 static이 아닌 부모의 기준에서 지정한 값 대로 움직이는 것이다.*/   
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1">
+            <div class="inner inner1">inner1</div>
+            <div class="inner inner2">inner2</div>
+        </div>
+    </div>
+    <div class="outer">
+        <div class="box box2">
+            <div class="inner inner1">inner1</div>
+            <div class="inner inner2">inner2</div>
+        </div>
+    </div>
+</body>
+</html>
