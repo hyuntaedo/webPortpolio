@@ -18,6 +18,7 @@ navbarMenu.addEventListener('click', (event)=>{
     if(link == null) {
         return;
     }
+    navbarMenu.classList.remove('open');
     scrollIntoView(link);
     
 });
@@ -26,6 +27,12 @@ navbarMenu.addEventListener('click', (event)=>{
 const homeContactBtn = document.querySelector('.home__button');
 homeContactBtn.addEventListener('click', ()=>{
     scrollIntoView('#contact');
+})
+
+//Navbar Toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click',()=>{
+    navbarMenu.classList.toggle('open');
 })
 
 // Make home slowly fade to transparent as this window scroll down
@@ -55,13 +62,21 @@ arrowUp.addEventListener('click', ()=>{
 const workBtnContainer = document.querySelector('.work__categories');
 const projectsContainer  = document.querySelector('.work__projects');
 const projects = document.querySelectorAll('.project');
-workBtnContainer.addEventListener('click',(event)=>{
-    const filter = event.target.dataset.filter || event.target.parentNode.dataset.filter;
+workBtnContainer.addEventListener('click',(e)=>{
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
     if(filter == null) {
         return;
     }
-    projectsContainer.classList.add('anim-out');
     
+    //Remove Selection from the previous item and select the new one
+    const active = document.querySelector('.categories__btn.selected');
+    active.classList.remove('selected');
+    const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode; 
+    target.classList.add('selected');
+    
+    
+
+    projectsContainer.classList.add('anim-out');
     setTimeout(()=>{
         projects.forEach((project) => {
             if(filter === '*' || filter === project.dataset.type) {
