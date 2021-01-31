@@ -91,23 +91,29 @@ p {
 
 /* Navbar */
 #navbar {
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    background-color: var(--color-pink);
     align-items: center;
+    background: transparent;
     color: var(--color-white);
     padding: 16px;
+    transition: all var(--animation-duration-ease-in);
+    z-index: 1;
+}
+#navbar.navbar--dark {
+    background-color: var(--color-pink);
+    padding: 8px;
 }
 .navbar__menu {
     display: flex;
 
 }
-
 .navbar__logo {
     font-size: var(--font-medium);
     font-weight: var(--weight-semi-bold);
 }
-
 .navbar__menu__item {
     padding: 8px 12px;
     margin: 0 4px;
@@ -115,8 +121,12 @@ p {
     border-radius: var(--size-border-radius);
 
 }
+.navbar__menu__item.active {
+    border: 1px solid #fff;
+}
 .navbar__menu__item:hover {
     background-color: var(--color-dark-pink);
+    transition: all var(--animation-duration-ease-in);
 }
 .navbar__toggle-btn {
     position: absolute;
@@ -129,8 +139,8 @@ p {
 
 /* Home */
 #home {
+    padding-top: 120px;
     background: url(./Portpolio_webSite/imgs/portpolio_background.png) center/cover no-repeat;
-    padding: 40px;
     text-align: center;
 }
 .home__avatar {
@@ -395,6 +405,27 @@ p {
 .contact__links a i:hover {
     transform: scale(1.1);
     color: var(--color-yellow);
+}
+
+/* Scroll */
+.arrow-up {
+    position: fixed;
+    z-index: 1;
+    bottom: 50px;
+    right: 50px;
+    width: 70px;
+    height: 70px;
+    font-size: 50px;
+    background: var(--color-pink);
+    color: var(--color-white);
+    border-radius: 50%;   
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--animation-duration-ease-in);
+}
+.arrow-up.visible {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* For below 768px screen width */
