@@ -31,6 +31,7 @@
 
     /* Animation */
     --animation-duration : 300ms ease;
+    --animation-duration: 300ms ease-out;
     --animation-duration-ease-in : 300ms ease-in;
     --animation-duration-ease-in-out : 300ms ease-in-out;
 }
@@ -309,6 +310,12 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    opacity: 1;
+    transition: all var(--animation-duration-ease-in-out);
+}
+.work__projects.anim-out {
+    opacity: 0;
+    transform: scale(0.96) translateY(40px);
 }
 .project {
     display: flex;
@@ -319,6 +326,9 @@ p {
     height: 250px;
     margin: 2px;
     background: var(--color-light-white);
+}
+.project.invisible {
+    display: none;
 }
 .project__img {
     max-width: 100%;
